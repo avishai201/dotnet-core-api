@@ -12,5 +12,11 @@ pipeline {
       }
     }
 
+    stage('Build Image of Docker') {
+      steps {
+        sh 'docker build -t avishai201/todoapi:${BUILD_ID} .'
+      }
+    }
+
   }
 }
