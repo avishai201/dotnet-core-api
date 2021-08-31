@@ -4,9 +4,8 @@ WORKDIR /app
 COPY . .
 RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
-MAINTAINER Avishai
+MAINTAINER Avishai S
 WORKDIR /app
 EXPOSE 80
 COPY --from=build-env /app/out .
-
 CMD ["dotnet", "TodoApi.dll"]
