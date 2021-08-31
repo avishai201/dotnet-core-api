@@ -21,7 +21,7 @@ pipeline {
     stage('Push to DockerHub') {
       steps {
          withDockerRegistry(credentialsId: 'DockerHub-Creds') {
-         sh docker push avishai201/todoapi:${BUILD_ID}
+         sh 'docker push avishai201/todoapi:${BUILD_ID}'
        }
     }   
  }
